@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Haruy Sushi - Menu Hambúrguer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        barlow: ['Barlow', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#ca3c3f'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-gray-100">
+
+    <!-- HEADER -->
+    <header class="header flex justify-between items-center px-6 py-4 max-w-6xl mx-auto bg-white shadow-md">
+        <img src="./assets/images/logo.png" alt="logo Haruy sushi" class="h-10" />
+
+        <nav class="hidden md:flex space-x-8 font-bold">
+            <a href="#cardapio" class="hover:text-red-600 transition">CARDÁPIO</a>
+        </nav>
+
+        <button id="btn-mobile" class="md:hidden focus:outline-none" aria-label="Abrir menu">
+            <svg id="icon-hamburger" class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                <path d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+
+            <svg id="icon-close" class="hidden w-6 h-6 text-gray-700" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+        </button>
+    </header>
+
+    <!-- MENU MOBILE -->
+    <nav id="menu-mobile" class="hidden md:hidden bg-white shadow-md px-6 py-4 max-w-6xl mx-auto">
+        <ul class="space-y-4 font-bold">
+            <li><a href="#cardapio" class="block hover:text-red-600 transition">CARDÁPIO</a></li>
+        </ul>
+    </nav>
+
+    <!-- BANNER -->
+    <section class="banner max-w-6xl mx-auto mt-16 flex flex-col md:flex-row items-center px-6">
+        <div class="coluna md:w-1/2 mb-8 md:mb-0">
+            <p class="text-3xl md:text-4xl text-left">O verdadeiro sabor de cozinha japonesa</p>
+            <p class="mt-6 text-left">
+                <a class="botao border border-gray-800 rounded-3xl px-6 py-3 text-lg inline-block hover:bg-red-600 hover:text-white transition"
+                    href="#cardapio">VEJA O CARDÁPIO</a>
+            </p>
+        </div>
+        <div class="coluna md:w-1/2">
+            <img src="./assets/images/banner.png" alt="prato" class="w-full" />
+        </div>
+    </section>
+
+    <!-- CARDÁPIO -->
+    <section id="cardapio" class="cardapio max-w-4xl mx-auto mt-20 px-6 text-center">
+        <h1 class="text-4xl font-bold mb-8">Cardápio</h1>
+
+        <!-- MENU CATEGORIAS -->
+        <nav id="nav-categorias" class="overflow-x-auto whitespace-nowrap snap-x flex gap-2 mt-6 pb-1">
+
+            <button data-cat="sushis"
+                class="btn-cat snap-start px-4 py-1 rounded-full bg-primary text-white font-bold text-sm transition-transform duration-150 cursor-pointer flex-shrink-0">
+                Sushi
+            </button>
+
+            <button data-cat="temakis"
+                class="btn-cat snap-start px-4 py-1 rounded-full bg-gray-200 text-gray-800 font-bold text-sm transition-transform duration-150 cursor-pointer flex-shrink-0">
+                Temaki
+            </button>
+
+            <button data-cat="bebidas"
+                class="btn-cat snap-start px-4 py-1 rounded-full bg-gray-200 text-gray-800 font-bold text-sm transition-transform duration-150 cursor-pointer flex-shrink-0">
+                Bebidas
+            </button>
+
+            <button data-cat="sobremesas"
+                class="btn-cat snap-start px-4 py-1 rounded-full bg-gray-200 text-gray-800 font-bold text-sm transition-transform duration-150 cursor-pointer flex-shrink-0">
+                Sobremesas
+            </button>
+
+        </nav>
+
+        <!-- CATEGORIAS  -->
+
+        <div id="cat-sushis" class="categoria-conteudo">
+        
+        <div class="cardapio-categoria text-left text-red-600 text-xl mb-4 font-semibold">
+            Sushi & Sashimi
+        </div>
+
+        <div class="space-y-6 text-left">
+            <div class="cardapio-item">
+                <div class="cardapio-nome font-bold text-lg">Combinado Sushi</div>
+                <div class="cardapio-preco text-red-600 text-sm">R$ 25,00</div>
+                <div class="cardapio-descricao text-gray-600 text-sm">10 Sashimis variados, 10 Urimakis filadélfia e 10 uramakis</div>
+            </div>
+            <div class="cardapio-item">
+                <div class="cardapio-nome font-bold text-lg">Combinado Sushi</div>
+                <div class="cardapio-preco text-red-600 text-sm">R$ 115,00</div>
+                <div class="cardapio-descricao text-gray-600 text-sm">10 Sashimis Variados, 10 uramakis Filadélfia e 10 Uramakis</div>
+            </div>
+            <div class="cardapio-item">
+                <div class="cardapio-nome font-bold text-lg">Combinado Hot</div>
+                <div class="cardapio-preco text-red-600 text-sm">R$ 99,00</div>
+                <div class="cardapio-descricao text-gray-600 text-sm">1 temaki Filadélfia Médio, 10 uramakis Filadélfia e 10 hot Filadélfia</div>
+            </div>
+            <div class="cardapio-item">
+                <div class="cardapio-nome font-bold text-lg">Combinado Yakissoba</div>
+                <div class="cardapio-preco text-red-600 text-sm">R$ 89,00</div>
+                <div class="cardapio-descricao text-gray-600 text-sm">1 temaki Filadélfia Médio, 10 uramakis Filadélfia e 10 hot Filadélfia</div>
+            </div>
+        </div>
+        </div>
+
+        <!-- CATEGORIA TEMAKIS -->
+    <div id="cat-temakis" class="categoria-conteudo hidden mt-10 text-left space-y-6">
+
+    <div class="cardapio-categoria text-left text-red-600 text-xl mt-12 mb-4 font-semibold">Temakis</div>
+
+    <div class="flex justify-between items-start">
+        <div>
+            <div class="font-bold text-lg">Temaki Filadélfia</div>
+            <div class="text-gray-600 text-sm">Salmão, cream cheese e pepino</div>
+        </div>
+        <div class="text-gray-900">R$ 28,00</div>
+    </div>
+
+    <div class="flex justify-between items-start">
+        <div>
+            <div class="font-bold text-lg">Temaki Salmão</div>
+            <div class="text-gray-600 text-sm">Salmão fresco com cream cheese</div>
+        </div>
+        <div class="text-gray-900">R$ 25,00</div>
+    </div>
+
+    <div class="flex justify-between items-start">
+        <div>
+            <div class="font-bold text-lg">Temaki Camarão</div>
+            <div class="text-gray-600 text-sm">Camarão temperado com cream cheese e pepino</div>
+        </div>
+        <div class="text-gray-900">R$ 32,00</div>
+    </div>
+
+    <div class="flex justify-between items-start">
+        <div>
+            <div class="font-bold text-lg">Temaki Hot</div>
+            <div class="text-gray-600 text-sm">Filadélfia empanado e frito com cream cheese e missô</div>
+        </div>
+        <div class="text-gray-900">R$ 30,00</div>
+    </div>
+
+    <div class="flex justify-between items-start">
+        <div>
+            <div class="font-bold text-lg">Temaki Atum</div>
+            <div class="text-gray-600 text-sm">Atum fresco com cream cheese e cebolinha</div>
+        </div>
+        <div class="text-gray-900">R$ 26,00</div>
+    </div>
+
+</div>
+
+         <div id="cat-bebidas" class="categoria-conteudo hidden">
+            <div class="cardapio-categoria text-left text-red-600 text-xl mt-12 mb-4 font-semibold">
+            Bebidas
+        </div>
+
+        <div class="space-y-6 text-left">
+            <div class="cardapio-item">
+                <div class="cardapio-nome font-bold text-lg">Coca-Cola Lata</div>
+                <div class="cardapio-preco text-red-600 text-sm">R$ 5,00</div>
+                <div class="cardapio-descricao text-gray-600 text-sm">Lata de Coca-Cola 300ml trincando de gelada</div>
+            </div>
+            <div class="cardapio-item">
+                <div class="cardapio-nome font-bold text-lg">Guaraná Lata</div>
+                <div class="cardapio-preco text-red-600 text-sm">R$ 5,00</div>
+                <div class="cardapio-descricao text-gray-600 text-sm">Guaraná 300ml trincando de gelada</div>
+            </div>
+            <div class="cardapio-item">
+                <div class="cardapio-nome font-bold text-lg">Água sem gás</div>
+                <div class="cardapio-preco text-red-600 text-sm">R$ 4,00</div>
+                <div class="cardapio-descricao text-gray-600 text-sm">Água sem gás 300ml</div>
+            </div>
+        </div>
+        </div>
+
+        <!-- CATEGORIA SOBREMESAS -->
+<div id="cat-sobremesas" class="categoria-conteudo hidden mt-10 text-left space-y-6">
+
+    <div class="cardapio-categoria text-left text-red-600 text-xl mt-12 mb-4 font-semibold">Sobremesas</div>
+
+    <div class="flex justify-between items-start">
+        <div>
+            <div class="font-bold text-lg">Mochi de Morango</div>
+            <div class="text-gray-600 text-sm">Bolinho de arroz japonês recheado com morango</div>
+        </div>
+        <div class="text-gray-900">R$ 12,00</div>
+    </div>
+
+    <div class="flex justify-between items-start">
+        <div>
+            <div class="font-bold text-lg">Mochi de Matchá</div>
+            <div class="text-gray-600 text-sm">Bolinho de arroz com recheio de chá verde</div>
+        </div>
+        <div class="text-gray-900">R$ 12,00</div>
+    </div>
+
+    <div class="flex justify-between items-start">
+        <div>
+            <div class="font-bold text-lg">Dorayaki</div>
+            <div class="text-gray-600 text-sm">Panqueca japonesa com recheio de pasta de feijão azuki</div>
+        </div>
+        <div class="text-gray-900">R$ 10,00</div>
+    </div>
+
+    <div class="flex justify-between items-start">
+        <div>
+            <div class="font-bold text-lg">Sorvete de Matchá</div>
+            <div class="text-gray-600 text-sm">Sorvete artesanal de chá verde japonês (2 bolas)</div>
+        </div>
+        <div class="text-gray-900">R$ 15,00</div>
+    </div>
+
+    <div class="flex justify-between items-start">
+        <div>
+            <div class="font-bold text-lg">Tempura de Banana</div>
+            <div class="text-gray-600 text-sm">Banana empanada à japonesa com mel e canela</div>
+        </div>
+        <div class="text-gray-900">R$ 14,00</div>
+    </div>
+
+</div>
+
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-gray-800 text-white text-center p-8 mt-20">
+        <h3 class="text-xl mb-2 font-semibold">Haruy Sushi</h3>
+        <p>Rua Prof. Toledo, 500, centro - Sorocaba</p>
+        <p>Whatsapp: (15) 98108-9666</p>
+        <p>Aberto todos os dias das 14h às 23h</p>
+    </footer>
+
+    <!-- WHATSAPP -->
+    <a href="https://wa.me/5515981089666" target="_blank" class="fixed right-5 bottom-5">
+        <img src="./assets/images/whatsapp.png" alt="link-whatsapp" class="h-16" />
+    </a>
+
+    <!-- SCRIPT CATEGORIAS CORRIGIDO -->
+    <script>
+        const botoes = document.querySelectorAll('.btn-cat');
+        const conteudos = document.querySelectorAll('.categoria-conteudo');
+
+        function mudarCategoria(cat) {
+            conteudos.forEach(div => {
+                if (div.id === 'cat-' + cat) {
+                    div.classList.remove('hidden');
+                } else {
+                    div.classList.add('hidden');
+                }
+            });
+
+            botoes.forEach(btn => {
+                if (btn.dataset.cat === cat) {
+                    btn.classList.add('bg-primary', 'text-white');
+                    btn.classList.remove('bg-gray-200', 'text-gray-800');
+                } else {
+                    btn.classList.remove('bg-primary', 'text-white');
+                    btn.classList.add('bg-gray-200', 'text-gray-800');
+                }
+            });
+        }
+
+        botoes.forEach(btn => {
+            btn.addEventListener('touchstart', () => {
+                btn.classList.add('scale-95');
+            });
+
+            btn.addEventListener('touchend', () => {
+                btn.classList.remove('scale-95');
+            });
+
+            btn.addEventListener('click', () => {
+                mudarCategoria(btn.dataset.cat);
+            });
+        });
+    </script>
+
+    <!-- SCRIPT MENU HAMBURGUER -->
+    <script>
+        const btn = document.getElementById('btn-mobile');
+        const menu = document.getElementById('menu-mobile');
+        const iconHamburger = document.getElementById('icon-hamburger');
+        const iconClose = document.getElementById('icon-close');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+            iconHamburger.classList.toggle('hidden');
+            iconClose.classList.toggle('hidden');
+        });
+    </script>
+
+</body>
+
+</html>
